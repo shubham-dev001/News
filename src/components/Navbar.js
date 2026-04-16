@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import { useLocation } from 'react-router'
 
 
 const Navbar = () => {
+  // let location = useLocation()
+  // React.useEffect(() => {
+  // console.log(location.pathname)
+  // }, [location]);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
@@ -19,7 +24,6 @@ const Navbar = () => {
             <li className="nav-item"><Link className="nav-link" to="/general">General</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/business">Business</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/entertainment">Entertainment</Link></li>
-
             <li className="nav-item"><Link className="nav-link" to="/health">Health</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
