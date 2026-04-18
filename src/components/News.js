@@ -55,8 +55,8 @@ const News = (props) => {
     const data = await fetch(url)
     const parsedData = await data.json()
 
-    setArticles(prevArticles => prevArticles.concat(parsedData.articles || []))
-    setTotalResults(parsedData.totalResults || 0)
+    setArticles(prevArticles => prevArticles.concat(parsedData.articles))
+    setTotalResults(parsedData.totalResults)
   }
 
   return (
@@ -71,7 +71,7 @@ const News = (props) => {
       <InfiniteScroll
         dataLength={articles?.length || 0}
         next={fetchMoreData}
-        hasMore={(articles?.length || 0) < totalResults}
+        hasMore={articles?.length  < totalResults && !loading}
         loader={<Spinner />}
       >
 
